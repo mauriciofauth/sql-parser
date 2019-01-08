@@ -41,13 +41,34 @@ class ContextTest extends TestCase
     public function contextLoading()
     {
         return array(
-            'MySQL match' => array('MySql50500', 'MySql50500'),
-            'MySQL strip' => array('MySql50712', 'MySql50700'),
-            'MySQL fallback' => array('MySql99999', 'MySql50700'),
-            'MariaDB match' => array('MariaDb100000', 'MariaDb100000'),
-            'MariaDB stripg' => array('MariaDb109900', 'MariaDb100000'),
-            'MariaDB fallback' => array('MariaDb990000', 'MariaDb100300'),
-            'Invalid' => array('Sql', null),
+            'MySQL match' => array(
+                'MySql50500',
+                'MySql50500',
+            ),
+            'MySQL strip' => array(
+                'MySql50712',
+                'MySql50700',
+            ),
+            'MySQL fallback' => array(
+                'MySql99999',
+                'MySql50700',
+            ),
+            'MariaDB match' => array(
+                'MariaDb100000',
+                'MariaDb100000',
+            ),
+            'MariaDB stripg' => array(
+                'MariaDb109900',
+                'MariaDb100000',
+            ),
+            'MariaDB fallback' => array(
+                'MariaDb990000',
+                'MariaDb100300',
+            ),
+            'Invalid' => array(
+                'Sql',
+                null,
+            ),
         );
     }
 
@@ -118,7 +139,10 @@ class ContextTest extends TestCase
         $this->assertEquals('`test`', Context::escape('test'));
 
         $this->assertEquals(
-            array('`a`', '`b`'),
+            array(
+                '`a`',
+                '`b`',
+            ),
             Context::escape(array('a', 'b'))
         );
     }

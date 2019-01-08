@@ -15,7 +15,10 @@ class OptionsArrayTest extends TestCase
             $this->getTokensList('A B = /*comment*/ (test) C'),
             array(
                 'A' => 1,
-                'B' => array(2, 'var'),
+                'B' => array(
+                    2,
+                    'var',
+                ),
                 'C' => 3,
             )
         );
@@ -40,8 +43,15 @@ class OptionsArrayTest extends TestCase
             new Parser(),
             $this->getTokensList('SUM = (3 + 5) RESULT = 8'),
             array(
-                'SUM' => array(1, 'expr', array('parenthesesDelimited' => true)),
-                'RESULT' => array(2, 'var'),
+                'SUM' => array(
+                    1,
+                    'expr',
+                    array('parenthesesDelimited' => true),
+                ),
+                'RESULT' => array(
+                    2,
+                    'var',
+                ),
             )
         );
         $this->assertEquals('(3 + 5)', (string) $component->has('SUM', true));
@@ -55,7 +65,10 @@ class OptionsArrayTest extends TestCase
             $this->getTokensList('A B = /*comment*/ (test) C'),
             array(
                 'A' => 1,
-                'B' => array(2, 'var'),
+                'B' => array(
+                    2,
+                    'var',
+                ),
                 'C' => 3,
             )
         );
@@ -79,7 +92,10 @@ class OptionsArrayTest extends TestCase
             $this->getTokensList('A B = /*comment*/ (test) C'),
             array(
                 'A' => 1,
-                'B' => array(2, 'var'),
+                'B' => array(
+                    2,
+                    'var',
+                ),
                 'C' => 3,
             )
         );

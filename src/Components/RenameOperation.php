@@ -156,7 +156,7 @@ class RenameOperation extends Component
         }
 
         // Last iteration was not saved.
-        if (!empty($expr->old)) {
+        if (! empty($expr->old)) {
             $ret[] = $expr;
         }
 

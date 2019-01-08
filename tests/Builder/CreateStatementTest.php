@@ -226,6 +226,7 @@ SUBPARTITION s5 ENGINE=InnoDB
 )
 )
 EOT
+            ,
             ),
             array(
                 'parts' => <<<EOT
@@ -241,6 +242,7 @@ PARTITION p3 ENGINE=InnoDB,
 PARTITION p4 ENGINE=InnoDB
 )
 EOT
+            ,
             ),
         );
     }

@@ -70,8 +70,7 @@ class FormatTest extends TestCase
                     ),
                 ),
                 'overriding' => array(
-                    array(
-                    ),
+                    array(),
                 ),
                 'expected' => array(
                     array(

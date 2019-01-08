@@ -27,8 +27,8 @@ class Table
     public static function getForeignKeys($statement)
     {
         if (empty($statement->fields)
-            || (!is_array($statement->fields))
-            || (!$statement->options->has('TABLE'))
+            || (! is_array($statement->fields))
+            || (! $statement->options->has('TABLE'))
         ) {
             return array();
         }
@@ -50,7 +50,7 @@ class Table
                 'index_list' => $columns,
             );
 
-            if (!empty($field->references)) {
+            if (! empty($field->references)) {
                 $tmp['ref_db_name'] = $field->references->table->database;
                 $tmp['ref_table_name'] = $field->references->table->table;
                 $tmp['ref_index_list'] = $field->references->columns;
@@ -84,8 +84,8 @@ class Table
     public static function getFields($statement)
     {
         if (empty($statement->fields)
-            || (!is_array($statement->fields))
-            || (!$statement->options->has('TABLE'))
+            || (! is_array($statement->fields))
+            || (! $statement->options->has('TABLE'))
         ) {
             return array();
         }

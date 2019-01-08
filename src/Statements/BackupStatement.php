@@ -28,6 +28,9 @@ class BackupStatement extends MaintenanceStatement
         'NO_WRITE_TO_BINLOG' => 2,
         'LOCAL' => 3,
 
-        'TO' => array(4, 'var'),
+        'TO' => array(
+            4,
+            'var',
+        ),
     );
 }

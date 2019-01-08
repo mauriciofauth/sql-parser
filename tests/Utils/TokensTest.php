@@ -54,7 +54,11 @@ class TokensTest extends TestCase
     public function matchProvider()
     {
         return array(
-            array(new Token(''), array(), true),
+            array(
+                new Token(''),
+                array(),
+                true,
+            ),
 
             array(
                 new Token('"abc"', Token::TYPE_STRING, Token::FLAG_STRING_DOUBLE_QUOTES),

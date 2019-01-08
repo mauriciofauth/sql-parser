@@ -318,8 +318,14 @@ class QueryTest extends TestCase
                     'statement' => $parser->statements[0],
                     'select_expr' => array('*'),
                     'select_tables' => array(
-                        array('actor', null),
-                        array('film', 'sakila2'),
+                        array(
+                            'actor',
+                            null,
+                        ),
+                        array(
+                            'film',
+                            'sakila2',
+                        ),
                     ),
                 )
             ),
@@ -336,8 +342,14 @@ class QueryTest extends TestCase
                     'statement' => $parser->statements[0],
                     'select_expr' => array('*'),
                     'select_tables' => array(
-                        array('actor', 'sakila'),
-                        array('film', null),
+                        array(
+                            'actor',
+                            'sakila',
+                        ),
+                        array(
+                            'film',
+                            null,
+                        ),
                     ),
                 )
             ),
@@ -354,7 +366,10 @@ class QueryTest extends TestCase
                     'statement' => $parser->statements[0],
                     'select_expr' => array(),
                     'select_tables' => array(
-                        array('actor', 'sakila'),
+                        array(
+                            'actor',
+                            'sakila',
+                        ),
                     ),
                 )
             ),
@@ -419,11 +434,17 @@ class QueryTest extends TestCase
             ),
             array(
                 'DROP TABLE tbl1, tbl2',
-                array('`tbl1`', '`tbl2`'),
+                array(
+                    '`tbl1`',
+                    '`tbl2`',
+                ),
             ),
             array(
                 'RENAME TABLE a TO b, c TO d',
-                array('`a`', '`c`'),
+                array(
+                    '`a`',
+                    '`c`',
+                ),
             ),
         );
     }
@@ -503,7 +524,10 @@ class QueryTest extends TestCase
                 $parser->statements[0],
                 $parser->list,
                 array(
-                    array('WHERE', 'WHERE film_id > 0'),
+                    array(
+                        'WHERE',
+                        'WHERE film_id > 0',
+                    ),
                 )
             )
         );
@@ -526,9 +550,18 @@ class QueryTest extends TestCase
                 $parser->statements[0],
                 $parser->list,
                 array(
-                    array('FROM', 'FROM city AS c'),
-                    array('WHERE', ''),
-                    array('LIMIT', 'LIMIT 0, 10'),
+                    array(
+                        'FROM',
+                        'FROM city AS c',
+                    ),
+                    array(
+                        'WHERE',
+                        '',
+                    ),
+                    array(
+                        'LIMIT',
+                        'LIMIT 0, 10',
+                    ),
                 )
             )
         );

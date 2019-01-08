@@ -155,7 +155,7 @@ class ContextGenerator
             }
 
             $value = strtoupper($value);
-            if (!isset($types[$value])) {
+            if (! isset($types[$value])) {
                 $types[$value] = $type;
             } else {
                 $types[$value] |= $type;
@@ -165,10 +165,10 @@ class ContextGenerator
         $ret = array();
         foreach ($types as $word => $type) {
             $len = strlen($word);
-            if (!isset($ret[$type])) {
+            if (! isset($ret[$type])) {
                 $ret[$type] = array();
             }
-            if (!isset($ret[$type][$len])) {
+            if (! isset($ret[$type][$len])) {
                 $ret[$type][$len] = array();
             }
             $ret[$type][$len][] = $word;
@@ -389,9 +389,9 @@ if (count($argv) >= 3) {
     $output = rtrim($argv[2], '/');
 
     // Checking if all directories are valid.
-    if (!is_dir($input)) {
+    if (! is_dir($input)) {
         throw new \Exception('The input directory does not exist.');
-    } elseif (!is_dir($output)) {
+    } elseif (! is_dir($output)) {
         throw new \Exception('The output directory does not exist.');
     }
 

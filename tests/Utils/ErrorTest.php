@@ -15,8 +15,18 @@ class ErrorTest extends TestCase
         $parser = new Parser($lexer->list);
         $this->assertEquals(
             array(
-                array('Unexpected character.', 0, '$', 22),
-                array('Unexpected dot.', 0, '.', 17),
+                array(
+                    'Unexpected character.',
+                    0,
+                    '$',
+                    22,
+                ),
+                array(
+                    'Unexpected dot.',
+                    0,
+                    '.',
+                    17,
+                ),
             ),
             Error::get(array($lexer, $parser))
         );
